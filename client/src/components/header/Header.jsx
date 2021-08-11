@@ -23,10 +23,17 @@ const useStyles = makeStyles((theme) => ({
   },
   logoIcon: {
     fontSize: "35px",
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+    },
   },
   logoText: {
     paddingLeft: "15px",
-    fontSize: "25px",
+    fontSize: "18px",
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "25px",
+    },
   },
   search: {
     display: "flex",
@@ -53,7 +60,10 @@ const useStyles = makeStyles((theme) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
-    width: "100%",
+    width: "50%",
+    [theme.breakpoints.up("sm")]: {
+      width: "100%",
+    },
     [theme.breakpoints.up("sm")]: {
       width: "12ch",
       "&:focus": {
