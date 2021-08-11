@@ -1,14 +1,17 @@
 import axios from "axios";
+import { api_key, url } from "./data";
 
-const API_KEY = "22789350-838f3b11489481688062c97f2";
-const URL = "https://pixabay.com/api/";
+console.log(api_key.value, url);
+const API_KEY = api_key;
+const URL = url;
 
 export const getImages = (search, count) => {
-    try {
-        const data = axios.get(`${URL}/?key=${API_KEY}&q=${search}&image_type=photo&per_page=${count}&safesearch=true`);
-        return data;
-    } catch (error) {
-        console.log("Error", error);
-    }
-}
-
+  try {
+    const data = axios.get(
+      `${URL}/?key=${API_KEY}&q=${search}&image_type=photo&per_page=${count}&safesearch=true`
+    );
+    return data;
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
